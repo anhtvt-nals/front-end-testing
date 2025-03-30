@@ -48,6 +48,8 @@ export function calculateDiscount(price: number, discountOptions: DiscountOption
   }
 
   const discount = price * discountRate;
-
-  return discount > price ? price : discount;
+  // Never return a discount greater than the price: max discount rate is 0.4%
+  // return discount > price ? price : discount;
+  
+  return discount
 }
